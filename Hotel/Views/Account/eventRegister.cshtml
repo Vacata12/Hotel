@@ -1,0 +1,81 @@
+﻿@model Hotel.Models.RegisterViewModel
+@{
+    ViewBag.Title = "eventRegister";
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Event Register Form Flat Responsive Widget Template :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Event Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="~/eventRegister/css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="~/eventRegister/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- js -->
+    <script type="text/javascript" src="~/eventRegister/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+</head>
+<body>
+    <script src="~/eventRegister/js/jquery.vide.min.js"></script>
+    <!-- main -->
+    <div data-vide-bg="video/Ipad">
+        <div class="center-container">
+            <div class="w3ls-header">
+                <div class="header-main">
+                    <h1>Event register Form</h1>
+                    <div class="header-bottom">
+                        <div class="header-right w3agile">
+                            <div class="header-left-bottom agileinfo">
+                                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                                    <div class="icon1">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        @Html.TextBoxFor(m => m.userName, new { @class = "form-control", @placeholder = "Enter your user name" })
+                                    </div>
+                                    <div class="icon1">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        @Html.TextBoxFor(m => m.firstName, new { @class = "form-control", @placeholder = "Enter your first name" })
+                                    </div>
+                                    <div class="icon1">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        @Html.TextBoxFor(m => m.lastName, new { @class = "form-control", @placeholder = "Enter your last name" })
+                                    </div>
+                                    <div class="icon1">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter your email" })
+                                    </div>
+                                    <div class="icon1">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Enter your phone" })
+                                    </div>
+                                    <div class="icon1">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Create your password" })
+                                    </div>
+                                    <div class="icon1">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirm your password" })
+                                    </div>
+                                    <div class="bottom">
+                                        <input type="submit" value="Register" />
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
